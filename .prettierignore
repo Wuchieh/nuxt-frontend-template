@@ -1,0 +1,6 @@
+# .prettierignore
+node_modules
+dist
+.nuxt
+.output
+pnpm-lock.yaml
