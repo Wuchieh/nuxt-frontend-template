@@ -3,6 +3,7 @@
 [English](README.md) | 中文
 
 ## 使用
+
 ```shell
 git clome https://github.com/Wuchieh/nuxt-frontend-template.git
 cd nuxt-frontend-template
@@ -10,7 +11,8 @@ pnpm i
 pnpm dev
 ```
 
- 打包
+打包
+
 ```shell
 pnpm build
 ```

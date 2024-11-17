@@ -3,6 +3,7 @@
 English | [中文](README_TW.md)
 
 ## Usage
+
 ```shell
 git clome https://github.com/Wuchieh/nuxt-frontend-template.git
 cd nuxt-frontend-template
@@ -11,6 +12,7 @@ pnpm dev
 ```
 
 Build
+
 ```shell
 pnpm build
 ```
@@ -22,4 +24,3 @@ pnpm build
 - [Unocss](https://unocss.dev/)
 - [Prettier](https://prettier.io/)
 - [PostCSS](https://postcss.org/)
-
