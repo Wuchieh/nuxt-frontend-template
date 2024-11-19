@@ -2,11 +2,10 @@ import { defineConfig, presetUno, presetIcons, type PresetMiniTheme } from 'unoc
 
 export default defineConfig({
   rules: [
-    [/^fs-(\d+px)$/, ([_, value]) => ({ 'font-size': value })],
-    [/^fs-(\d*\.?\d+rem)$/, ([_, value]) => ({ 'font-size': value })],
-    [/^square-(\d*\.?\d+(rem|px))$/, ([_, value]) => ({ height: value, width: value })],
+    [/^fs-(\d*\.?\d+(px|rem|em))$/, ([_, value]) => ({ 'font-size': value })],
+    [/^square-(\d*\.?\d+(px|rem|em))$/, ([_, value]) => ({ height: value, width: value })],
     [
-      /^size-(\d*\.?\d+(rem|px))$/,
+      /^size-(\d*\.?\d+(px|rem|em))$/,
       ([_, value]) => ({
         height: value,
         width: value,

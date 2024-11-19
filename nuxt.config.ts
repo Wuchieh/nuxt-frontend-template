@@ -4,7 +4,21 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  modules: ['@unocss/nuxt'],
+  modules: ['@unocss/nuxt', '@nuxtjs/i18n', '@pinia/nuxt'],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+      },
+      {
+        code: 'tw',
+        language: 'tw',
+      },
+    ],
+    vueI18n: './i18n/index.ts',
+  },
 
   unocss: {
     nuxtLayers: true,

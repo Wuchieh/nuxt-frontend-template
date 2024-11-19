@@ -24,3 +24,5 @@ pnpm build
 - [Unocss](https://unocss.dev/)
 - [Prettier](https://prettier.io/)
 - [PostCSS](https://postcss.org/)
+- [I18n](https://i18n.nuxtjs.org)
+- [Pinia](https://pinia.vuejs.org)
