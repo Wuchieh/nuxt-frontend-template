@@ -1,5 +1,6 @@
 import enUs from './language/enUS'
 import zhTW from './language/zhTW'
+
 export default defineI18nConfig(() => ({
   legacy: false,
   locale: 'zh-tw',

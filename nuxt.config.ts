@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'en-us',
-        language: 'zh-tw',
+        language: 'en-us',
       },
       {
         code: 'zh-tw',
