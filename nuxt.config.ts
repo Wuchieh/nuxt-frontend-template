@@ -9,12 +9,12 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       {
-        code: 'en',
-        language: 'en-US',
+        code: 'en-us',
+        language: 'zh-tw',
       },
       {
-        code: 'tw',
-        language: 'tw',
+        code: 'zh-tw',
+        language: 'zh-tw',
       },
     ],
     vueI18n: './i18n/index.ts',

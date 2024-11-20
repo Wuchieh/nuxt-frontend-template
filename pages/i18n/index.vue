@@ -5,8 +5,8 @@
     </div>
     <div>{{ $t('welcome') }}</div>
     <div>
-      <button @click="setLocale('en')">en</button>
-      <button @click="setLocale('tw')">tw</button>
+      <button @click="setLocale('en-us')">en</button>
+      <button @click="setLocale('zh-tw')">tw</button>
     </div>
   </div>
 </template>
