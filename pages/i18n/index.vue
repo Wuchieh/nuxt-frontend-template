@@ -5,17 +5,27 @@
     </div>
     <div>{{ $t('welcome') }}</div>
     <div>
-      <button @click="setLocale('en-us')">en</button>
-      <button @click="setLocale('zh-tw')">tw</button>
+      <button v-for="v in availableLocales" :key="v.code" @click="setLocale(v.code)">
+        {{ v.text }}
+      </button>
     </div>
+    <div>{{ locale }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { setLocale } = useI18n()
+const { setLocale, locales, locale } = useI18n()
+
+const availableLocales = computed(() => {
+  return locales.value //.filter((i) => i.code !== locale.value)
+})
 
 definePageMeta({
   name: 'i18n-index',
+})
+
+onMounted(() => {
+  console.log(useBrowserLocale())
 })
 </script>
 

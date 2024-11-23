@@ -29,15 +29,21 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       {
-        code: 'en-us',
-        language: 'en-us',
+        code: 'tw',
+        file: 'tw.ts',
+        language: 'tw',
+        text: '繁體中文',
       },
       {
-        code: 'zh-tw',
-        language: 'zh-tw',
+        code: 'en',
+        file: 'en.ts',
+        language: 'en',
+        text: 'English',
       },
     ],
-    vueI18n: './i18n/index.ts',
+    lazy: true,
+    langDir: 'language/',
+    defaultLocale: 'tw',
   },
 
   unocss: {
