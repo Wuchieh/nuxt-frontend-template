@@ -37,6 +37,9 @@ export default defineConfig({
       },
     ],
   ],
+  shortcuts: {
+    'text-nowrap': 'whitespace-nowrap overflow-hidden text-ellipsis',
+  },
   content: {
     filesystem: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}'],
   },
