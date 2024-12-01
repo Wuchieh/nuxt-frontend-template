@@ -36,6 +36,16 @@ export default defineConfig({
         )
       },
     ],
+    [
+      /^clamped-text-(\d)$/,
+      ([_, value]) => ({
+        display: '-webkit-box',
+        '-webkit-box-orient': 'vertical',
+        overflow: 'hidden',
+        'text-overflow': 'ellipsis',
+        '-webkit-line-clamp': value,
+      }),
+    ],
   ],
   shortcuts: {
     'text-nowrap': 'whitespace-nowrap overflow-hidden text-ellipsis',
