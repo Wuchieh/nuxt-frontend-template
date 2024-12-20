@@ -33,6 +33,10 @@ const onClickDebouncePromise = async () => {
 }
 
 const debounceRefValue = debounceRef('')
+
+definePageMeta({
+  name: 'utils',
+})
 </script>
 
 <style scoped lang="scss"></style>

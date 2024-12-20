@@ -31,6 +31,12 @@
   </div>
 </template>
 
+<script setup lang="ts">
+definePageMeta({
+  name: 'post-css',
+})
+</script>
+
 <style lang="scss">
 /* 定義 CSS 變數 */
 :root {

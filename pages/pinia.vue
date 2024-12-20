@@ -9,6 +9,10 @@
 import { useAppStore } from '~/store/app'
 
 const app = useAppStore()
+
+definePageMeta({
+  name: 'pinia',
+})
 </script>
 
 <style scoped lang="scss"></style>
