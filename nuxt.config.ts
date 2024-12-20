@@ -29,21 +29,29 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       {
-        code: 'tw',
+        code: 'zh-TW',
         file: 'tw.ts',
-        language: 'tw',
-        text: '繁體中文',
+        language: 'zh-TW',
+        name: '繁體中文',
       },
       {
-        code: 'en',
+        code: 'en-US',
         file: 'en.ts',
-        language: 'en',
-        text: 'English',
+        language: 'en-US',
+        name: 'English',
       },
     ],
     lazy: true,
     langDir: 'language/',
-    defaultLocale: 'tw',
+    defaultLocale: 'zh-TW',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: true,
+      fallbackLocale: 'zh-TW',
+    },
   },
 
   unocss: {
