@@ -63,3 +63,13 @@ export const debounceRef = <T = any>(value: T, duration: number = 500) => {
     }
   })
 }
+
+export const debounceFunc = (func: () => void, duration: number = 500) => {
+  let timeout: any
+  return () => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      func()
+    }, duration)
+  }
+}
