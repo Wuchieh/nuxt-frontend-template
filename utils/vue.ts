@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import { cloneDeep } from 'lodash-es'
 /**
  * @example
  * const [num,resetNum] = useResetRef(0)
