@@ -5,16 +5,16 @@ English | [中文](README_TW.md)
 ## Usage
 
 ```shell
-git clome https://github.com/Wuchieh/nuxt-frontend-template.git
-cd nuxt-frontend-template
-pnpm i
-pnpm dev
+    git clome https://github.com/Wuchieh/nuxt-frontend-template.git
+    cd nuxt-frontend-template
+    pnpm i
+    pnpm dev
 ```
 
 Build
 
 ```shell
-pnpm build
+  pnpm build
 ```
 
 ## Technology Stack
