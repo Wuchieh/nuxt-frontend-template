@@ -16,4 +16,4 @@ const useResetRef = <T = any>(value: T) => {
   return [valueRef, resetRef] as const
 }
 
-export {useResetRef}
+export { useResetRef }
