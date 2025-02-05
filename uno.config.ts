@@ -46,6 +46,29 @@ export default defineConfig({
         '-webkit-line-clamp': value,
       }),
     ],
+    [
+      /^(size|w|h)-fixed-(.+)$/,
+      ([_, w, v]) => {
+        const sizeMapping: Record<string, string[]> = {
+          size: ['width', 'height'],
+          w: ['width'],
+          h: ['height'],
+        }
+
+        const properties = sizeMapping[w] || []
+        const value = isNaN(Number(v)) ? v : `${Number(v) / 4}rem`
+
+        return properties.reduce(
+          (res, prop) => {
+            res[`max-${prop}`] = value
+            res[`min-${prop}`] = value
+            res[prop] = value
+            return res
+          },
+          {} as Record<string, string>
+        )
+      },
+    ]
   ],
   shortcuts: {
     'text-nowrap': 'whitespace-nowrap overflow-hidden text-ellipsis',
