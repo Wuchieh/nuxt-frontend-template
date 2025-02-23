@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <div>count: {{ app.count }}</div>
-    <button @click="app.add">++</button>
-  </div>
+    <div>
+        <div>count: {{ app.count }}</div>
+        <button @click="app.add">
+            ++
+        </button>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { useAppStore } from '~/store/app'
+import { useAppStore } from '~/store/app';
 
-const app = useAppStore()
+const app = useAppStore();
 
-definePageMeta({
-  name: 'pinia',
-})
+definePageMeta({ name: 'pinia' });
 </script>
 
 <style scoped lang="scss"></style>

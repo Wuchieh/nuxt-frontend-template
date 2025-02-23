@@ -1,40 +1,40 @@
 <template>
-  <div class="postcss-test">
-    <h1 class="title">PostCSS 測試</h1>
+    <div class="postcss-test">
+        <h1 class="title">
+            PostCSS 測試
+        </h1>
 
-    <div class="card">
-      <div class="card__header">
-        <h2>特性展示</h2>
-      </div>
+        <div class="card">
+            <div class="card__header">
+                <h2>特性展示</h2>
+            </div>
 
-      <div class="card__content">
-        <div class="feature-grid">
-          <div class="feature-item">
-            <span class="feature-item__label">巢狀 CSS</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-item__label">PX 轉 REM</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-item__label">自動前綴</span>
-          </div>
-          <div class="feature-item">
-            <span class="feature-item__label">現代 CSS 特性</span>
-          </div>
+            <div class="card__content">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-item__label">巢狀 CSS</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-item__label">PX 轉 REM</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-item__label">自動前綴</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-item__label">現代 CSS 特性</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-properties">
+                <p>Custom Properties 測試</p>
+            </div>
         </div>
-      </div>
-
-      <div class="custom-properties">
-        <p>Custom Properties 測試</p>
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  name: 'post-css',
-})
+definePageMeta({ name: 'post-css' });
 </script>
 
 <style lang="scss">

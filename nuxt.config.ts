@@ -1,94 +1,90 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+    compatibilityDate: '2024-04-03',
+    devtools: { enabled: true },
 
-  modules: ['@nuxtjs/i18n', '@pinia/nuxt', '@nuxt/image', '@unocss/nuxt', '@nuxtjs/google-fonts'],
-
-  googleFonts: {
-    display: 'swap',
-    download: false,
-    families: {
-      'Noto Sans TC': true,
-    },
-  },
-
-  image: {
-    provider: 'ipx',
-    presets: {
-      default: {
-        modifiers: {
-          format: 'webp',
-          quality: 75, // 設定品質
-        },
-      },
-    },
-  },
-
-  i18n: {
-    locales: [
-      {
-        code: 'zh-TW',
-        file: 'tw.ts',
-        language: 'zh-TW',
-        name: '繁體中文',
-      },
-      {
-        code: 'en-US',
-        file: 'en.ts',
-        language: 'en-US',
-        name: 'English',
-      },
+    modules: [
+        '@nuxtjs/i18n',
+        '@pinia/nuxt',
+        '@nuxt/image',
+        '@unocss/nuxt',
+        '@nuxtjs/google-fonts',
+        '@nuxt/eslint',
     ],
-    lazy: true,
-    langDir: 'language/',
-    defaultLocale: 'zh-TW',
-    strategy: 'prefix_except_default',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      alwaysRedirect: true,
-      fallbackLocale: 'zh-TW',
+
+    googleFonts: {
+        display: 'swap',
+        download: false,
+        families: { 'Noto Sans TC': true },
     },
-  },
 
-  unocss: {
-    nuxtLayers: true,
-  },
-
-  postcss: {
-    plugins: {
-      '@unocss/postcss': {},
-      'postcss-preset-env': {
-        stage: 1,
-        features: {
-          'nesting-rules': true,
+    image: {
+        presets: {
+            default: {
+                modifiers: {
+                    format: 'webp',
+                    quality: 75, // 設定品質
+                },
+            },
         },
-      },
-      'postcss-nested': {},
-      'postcss-pxtorem': {
-        // 更正插件名稱
-        rootValue: 16,
-        propList: ['*'],
-        exclude: /node_modules/i,
-      },
-      autoprefixer: {
-        overrideBrowserslist: ['last 2 versions', '> 1%'],
-      },
+        provider: 'ipx',
     },
-  },
 
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern',
+    i18n: {
+        defaultLocale: 'zh-TW',
+        detectBrowserLanguage: {
+            alwaysRedirect: true,
+            cookieKey: 'i18n_redirected',
+            fallbackLocale: 'zh-TW',
+            redirectOn: 'root',
+            useCookie: true,
         },
-      },
+        langDir: 'language/',
+        lazy: true,
+        locales: [
+            {
+                code: 'zh-TW',
+                file: 'tw.ts',
+                language: 'zh-TW',
+                name: '繁體中文',
+            },
+            {
+                code: 'en-US',
+                file: 'en.ts',
+                language: 'en-US',
+                name: 'English',
+            },
+        ],
+        strategy: 'prefix_except_default',
     },
-  },
 
-  css: ['~/assets/css/style.scss'],
-})
+    unocss: { nuxtLayers: true },
+
+    postcss: {
+        plugins: {
+            '@unocss/postcss': {},
+            'autoprefixer': {
+                overrideBrowserslist: [
+                    'last 2 versions',
+                    '> 1%',
+                ],
+            },
+            'postcss-nested': {},
+            'postcss-preset-env': {
+                features: { 'nesting-rules': true },
+                stage: 1,
+            },
+            'postcss-pxtorem': {
+                exclude: /node_modules/i,
+                propList: ['*'],
+                // 更正插件名稱
+                rootValue: 16,
+            },
+        },
+    },
+
+    vite: { css: { preprocessorOptions: { scss: { api: 'modern' } } } },
+
+    css: ['~/assets/css/style.scss'],
+});

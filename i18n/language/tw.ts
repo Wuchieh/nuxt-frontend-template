@@ -1,4 +1,4 @@
 export default {
-  welcome: '歡迎',
-  test: '測試',
-}
+    test: '測試',
+    welcome: '歡迎',
+};
