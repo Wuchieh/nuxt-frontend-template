@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { presetUno } from 'unocss';
+import { presetWind3 as presetUno } from '@unocss/preset-wind3';
 
 const { theme } = presetUno();
 const colors = ref(theme?.colors);

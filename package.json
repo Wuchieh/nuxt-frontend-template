@@ -18,6 +18,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/i18n": "^9.3.1",
     "@pinia/nuxt": "^0.10.1",
+    "@unocss/preset-wind3": "66.0.0",
     "date-fns": "^4.1.0",
     "js-md5": "^0.8.3",
     "lodash-es": "^4.17.21",
