@@ -13,34 +13,34 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.1.0",
+    "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/i18n": "^9.2.1",
+    "@nuxtjs/i18n": "^9.3.1",
     "@pinia/nuxt": "^0.10.1",
     "date-fns": "^4.1.0",
     "js-md5": "^0.8.3",
     "lodash-es": "^4.17.21",
-    "nuxt": "^3.15.4",
+    "nuxt": "^3.16.0",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.3.0",
-    "@kikiutils/eslint-config": "^0.7.4",
+    "@antfu/eslint-config": "^4.10.1",
+    "@kikiutils/eslint-config": "^0.11.1",
     "@types/lodash-es": "^4.17.12",
-    "@unocss/nuxt": "^66.0.0",
-    "@unocss/postcss": "^66.0.0",
-    "eslint": "^9.21.0",
+    "@unocss/nuxt": "66.0.0",
+    "@unocss/postcss": "66.0.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-tailwindcss": "^3.18.0",
-    "eslint-plugin-vue": "^9.32.0",
+    "eslint-plugin-vue": "^10.0.0",
     "postcss": "^8.5.3",
     "postcss-nested": "^7.0.2",
-    "postcss-preset-env": "^10.1.4",
+    "postcss-preset-env": "^10.1.5",
     "postcss-pxtorem": "^6.1.0",
-    "sass": "^1.85.0",
-    "unocss": "^66.0.0",
-    "vue-tsc": "^2.2.2"
+    "sass": "^1.85.1",
+    "unocss": "66.0.0",
+    "vue-tsc": "2.2.8"
   }
 }
