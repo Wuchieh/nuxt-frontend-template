@@ -33,13 +33,6 @@ export default defineNuxtConfig({
 
     i18n: {
         defaultLocale: 'zh-TW',
-        detectBrowserLanguage: {
-            alwaysRedirect: true,
-            cookieKey: 'i18n_redirected',
-            fallbackLocale: 'zh-TW',
-            redirectOn: 'root',
-            useCookie: true,
-        },
         langDir: 'language/',
         lazy: true,
         locales: [
@@ -57,6 +50,7 @@ export default defineNuxtConfig({
             },
         ],
         strategy: 'prefix_except_default',
+        vueI18n: './i18n.config.ts',
     },
 
     unocss: { nuxtLayers: true },
