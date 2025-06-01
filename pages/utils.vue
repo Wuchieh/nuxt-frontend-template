@@ -35,10 +35,7 @@ import { useResetRef } from '~/utils/vue';
 
 const _sleep = debouncePromise(sleep);
 const debounceRefValue = debounceRef('');
-const [
-    num,
-    resetNum,
-] = useResetRef(0);
+const [num, resetNum] = useResetRef(0);
 
 async function onClickDebouncePromise() {
     _sleep(1000).then(() => {

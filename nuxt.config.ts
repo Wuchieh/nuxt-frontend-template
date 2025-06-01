@@ -2,33 +2,14 @@
 
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
-    devtools: { enabled: true },
+    css: ['~/assets/css/style.scss'],
 
-    modules: [
-        '@nuxtjs/i18n',
-        '@pinia/nuxt',
-        '@nuxt/image',
-        '@unocss/nuxt',
-        '@nuxtjs/google-fonts',
-        '@nuxt/eslint',
-    ],
+    devtools: { enabled: true },
 
     googleFonts: {
         display: 'swap',
         download: false,
         families: { 'Noto Sans TC': true },
-    },
-
-    image: {
-        presets: {
-            default: {
-                modifiers: {
-                    format: 'webp',
-                    quality: 75, // 設定品質
-                },
-            },
-        },
-        provider: 'ipx',
     },
 
     i18n: {
@@ -53,7 +34,26 @@ export default defineNuxtConfig({
         vueI18n: './i18n.config.ts',
     },
 
-    unocss: { nuxtLayers: true },
+    image: {
+        presets: {
+            default: {
+                modifiers: {
+                    format: 'webp',
+                    quality: 75, // 設定品質
+                },
+            },
+        },
+        provider: 'ipx',
+    },
+
+    modules: [
+        '@nuxtjs/i18n',
+        '@pinia/nuxt',
+        '@nuxt/image',
+        '@unocss/nuxt',
+        '@nuxtjs/google-fonts',
+        '@nuxt/eslint',
+    ],
 
     postcss: {
         plugins: {
@@ -78,7 +78,7 @@ export default defineNuxtConfig({
         },
     },
 
-    vite: { css: { preprocessorOptions: { scss: { api: 'modern' } } } },
+    unocss: { nuxtLayers: true },
 
-    css: ['~/assets/css/style.scss'],
+    vite: { css: { preprocessorOptions: { scss: { api: 'modern' } } } },
 });

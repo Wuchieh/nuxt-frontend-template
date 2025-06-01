@@ -1,7 +1,7 @@
 <template>
     <div
-        :style="{ background, color: textColor }"
         class="p-2"
+        :style="{ background, color: textColor }"
     >
         <div>
             <h1 class="m-0">

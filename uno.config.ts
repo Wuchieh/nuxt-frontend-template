@@ -13,10 +13,7 @@ export default defineConfig({
                 const colorVars = Object.entries(
                     theme.colors as Record<string, Record<string, string> | string>,
                 )
-                    .map(([
-                        name,
-                        color,
-                    ]) => {
+                    .map(([name, color]) => {
                         if (typeof color === 'string') {
                             return `--color-${name}: ${color};`;
                         }
@@ -40,27 +37,18 @@ export default defineConfig({
     rules: [
         [
             /^fs-((?:\d+(?:\.\d+)?|\.\d+)(px|rem|em))$/,
-            ([
-                _,
-                value,
-            ]) => ({ 'font-size': value }),
+            ([_, value]) => ({ 'font-size': value }),
         ],
         [
             /^square-((?:\d+(?:\.\d+)?|\.\d+)(px|rem|em))$/,
-            ([
-                _,
-                value,
-            ]) => ({
+            ([_, value]) => ({
                 height: value,
                 width: value,
             }),
         ],
         [
             /^size-((?:\d+(?:\.\d+)?|\.\d+)(px|rem|em))$/,
-            ([
-                _,
-                value,
-            ]) => ({
+            ([_, value]) => ({
                 'height': value,
                 'min-height': value,
                 'min-width': value,
@@ -107,10 +95,7 @@ export default defineConfig({
         ],
         [
             /^clamped-text-(\d)$/,
-            ([
-                _,
-                value,
-            ]) => ({
+            ([_, value]) => ({
                 '-webkit-box-orient': 'vertical',
                 '-webkit-line-clamp': value,
                 'display': '-webkit-box',

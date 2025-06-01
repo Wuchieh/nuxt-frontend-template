@@ -6,6 +6,16 @@ interface RunningPromise<T> {
     resolver: (value: T) => void;
 }
 
+export function debounceFunc(func: () => void, duration: number = 500) {
+    let timeout: any;
+    return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func();
+        }, duration);
+    };
+}
+
 export function debouncePromise<T extends (...args: any[]) => Promise<any>>(apiCall: T) {
     const running = new Map<string, RunningPromise<ReturnType<T>>>();
 
@@ -62,14 +72,4 @@ export function debounceRef<T = any>(value: T, duration: number = 500) {
             },
         };
     });
-}
-
-export function debounceFunc(func: () => void, duration: number = 500) {
-    let timeout: any;
-    return () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func();
-        }, duration);
-    };
 }
