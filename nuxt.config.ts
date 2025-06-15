@@ -6,6 +6,8 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
 
+    future: { compatibilityVersion: 4 },
+
     googleFonts: {
         display: 'swap',
         download: false,
@@ -13,6 +15,7 @@ export default defineNuxtConfig({
     },
 
     i18n: {
+        bundle: { optimizeTranslationDirective: false },
         defaultLocale: 'zh-TW',
         langDir: 'language/',
         lazy: true,

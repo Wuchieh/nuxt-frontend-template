@@ -30,9 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import { debounceRef } from '~/utils';
-import { useResetRef } from '~/utils/vue';
-
 const _sleep = debouncePromise(sleep);
 const debounceRefValue = debounceRef('');
 const [num, resetNum] = useResetRef(0);
