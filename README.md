@@ -2,13 +2,15 @@
 
 English | [中文](README_TW.md)
 
+compatibility [nuxt4](https://nuxt.com/docs/getting-started/upgrade#new-directory-structure)
+
 ## Usage
 
 ```shell
-    git clome https://github.com/Wuchieh/nuxt-frontend-template.git
-    cd nuxt-frontend-template
-    pnpm i
-    pnpm dev
+  git clome https://github.com/Wuchieh/nuxt-frontend-template.git
+  cd nuxt-frontend-template
+  pnpm i
+  pnpm dev
 ```
 
 Build
