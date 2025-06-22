@@ -86,7 +86,8 @@ export default defineConfig({
                         },
                         borderRadius,
                     ) => {
-                        acc[borderRadius] = size;
+                        if (!borderRadius) return {};
+                        acc[borderRadius] = size!;
                         return acc;
                     },
                     {},
@@ -119,8 +120,8 @@ export default defineConfig({
                     w: ['width'],
                 };
 
-                const properties = sizeMapping[w] || [];
-                const value = Number.isNaN(Number(v)) ? v : `${Number(v) / 4}rem`;
+                const properties = sizeMapping[w!] || [];
+                const value = Number.isNaN(Number(v)) ? v! : `${Number(v) / 4}rem`;
 
                 return properties.reduce(
                     (res, prop) => {

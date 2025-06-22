@@ -24,7 +24,7 @@
         </div>
         <div
             ref="mainRef"
-            class="overflow-y-auto"
+            class="flex flex-wrap gap-2 overflow-y-auto"
             :style="{
                 height: mainRefHeight,
             }"
@@ -32,24 +32,23 @@
             <div
                 v-for="(v, k) in colors"
                 :key="k"
-                class="flex"
             >
-                <div>
-                    <div
-                        v-if="typeof v === 'object'"
-                    >
+                <template
+                    v-if="typeof v === 'object'"
+                >
+                    <div>
                         <div
                             v-for="(v2, k2) in v"
                             :key="k2"
                             class="flex gap-2"
                             :style="{
-                                background: v2,
+                                background: `${v2}`,
                             }"
                         >
                             {{ k }}-{{ k2 }}:{{ v2 }}
                         </div>
                     </div>
-                </div>
+                </template>
             </div>
         </div>
     </div>

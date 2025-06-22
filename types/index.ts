@@ -4,7 +4,7 @@ type ObjectValueStringKey<T extends Record<string, any>> = {
 
 type Optional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 
-export type{
+export type {
     ObjectValueStringKey,
     Optional,
 };
