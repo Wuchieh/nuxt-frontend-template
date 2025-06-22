@@ -1,3 +1,25 @@
+/**
+ * @class Token
+ * @description
+ * Used in `header.Authenticate`.
+ *
+ * If both `useCookie` and `useLocalStorage` are set to `false`, the data will only be stored on the current page.
+ *
+ * @example
+ * const token = new Token('token')
+ * fetch('/info',{
+ *   headers: {
+ *     Authorization: token.authToken()
+ *   },
+ * })
+ *
+ * @example
+ * new Token({
+ *   key: 'token',
+ *   useCookie: true,
+ *   useLocalStorage: false,
+ * })
+ */
 class Token {
     _key: string;
     value: string;
@@ -31,11 +53,29 @@ class Token {
         this.value = this.get();
     }
 
+    /**
+     * @function authToken
+     * @description
+     * Get the authorization token string with the Bearer prefix.
+     *
+     * This method prioritizes `this.value`; if it doesn't exist,
+     *
+     * it will call `this.get()`, and generate a formatted
+     *
+     * authorization header string like `Bearer xxxxxx` based on the result.
+     *
+     * @returns {string} `Bearer <token>` or ''
+     */
     authToken() {
         const val = this.value || this.get();
         return val ? `Bearer ${val}` : '';
     }
 
+    /**
+     * @function clear
+     * @description
+     * clear token
+     */
     clear() {
         if (this.useCookie) {
             useCookie(this._key).value = void 0;
@@ -48,6 +88,10 @@ class Token {
         this.value = '';
     }
 
+    /**
+     * @function get
+     * get token
+     */
     get() {
         if (this.useCookie) {
             const val = useCookie(this._key).value;
@@ -62,6 +106,12 @@ class Token {
         return this.value;
     }
 
+    /**
+     * @function set
+     * @param {string} val
+     * @description
+     * set token
+     */
     set(val: string) {
         this.value = val;
 
