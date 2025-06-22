@@ -15,7 +15,6 @@ class Token {
                 useCookie,
                 useLocalStorage,
             } = option;
-            if (!key || key.length) throw new Error('not found key');
 
             this._key = key;
             this.value = '';
@@ -28,7 +27,8 @@ class Token {
             this.useLocalStorage = true;
         }
 
-        if (!this.useCookie && !this.useLocalStorage) throw new Error('not set save data method');
+        if (!this._key || this._key.length) throw new Error('not found key');
+        this.value = this.get();
     }
 
     authToken() {
@@ -44,6 +44,8 @@ class Token {
         if (this.useLocalStorage) {
             localStorage.removeItem(this._key);
         }
+
+        this.value = '';
     }
 
     get() {
