@@ -88,6 +88,7 @@ export default defineNuxtConfig({
             },
             'postcss-pxtorem': {
                 exclude: /node_modules/i,
+                minPixelValue: 1,
                 propList: ['*'],
                 // 更正插件名稱
                 rootValue: 16,
