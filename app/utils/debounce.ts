@@ -6,12 +6,16 @@ interface RunningPromise<T> {
     resolver: (value: T) => void;
 }
 
-export function debounceFunc(func: () => void, duration: number = 500) {
-    let timeout: any;
-    return () => {
+export function debounceFunc<T extends unknown[]>(
+    func: (...args: T) => void,
+    duration: number = 500,
+): (...args: T) => void {
+    let timeout: NodeJS.Timeout;
+
+    return (...args: T) => {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-            func();
+            func(...args);
         }, duration);
     };
 }
