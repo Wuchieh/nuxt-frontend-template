@@ -1,10 +1,7 @@
 import { md5 } from 'js-md5';
 
-interface RunningPromise<T> {
-    promise: Promise<T>;
-    rejecter: (reason: any) => void;
-    resolver: (value: T) => void;
-}
+import { useWithResolvers } from '~/utils/index';
+import type { withResolversPromise } from '~/utils/index';
 
 export function debounceFunc<T extends unknown[]>(
     func: (...args: T) => void,
@@ -21,7 +18,7 @@ export function debounceFunc<T extends unknown[]>(
 }
 
 export function debouncePromise<T extends (...args: any[]) => Promise<any>>(apiCall: T) {
-    const running = new Map<string, RunningPromise<ReturnType<T>>>();
+    const running = new Map<string, withResolversPromise<ReturnType<T>>>();
 
     return (...args: Parameters<T>): ReturnType<T> => {
         return new Promise((resolve, reject) => {
@@ -30,28 +27,19 @@ export function debouncePromise<T extends (...args: any[]) => Promise<any>>(apiC
             if (running.has(key)) {
                 running.get(key)!.promise.then(resolve).catch(reject);
             } else {
-                const promiseWrapper: RunningPromise<ReturnType<T>> = {
-                    promise: null!,
-                    rejecter: null!,
-                    resolver: null!,
-                };
-
-                promiseWrapper.promise = new Promise((res, rej) => {
-                    promiseWrapper.resolver = res;
-                    promiseWrapper.rejecter = rej;
-                });
+                const promiseWrapper = useWithResolvers<ReturnType<T>>();
 
                 running.set(key, promiseWrapper);
 
                 apiCall(...args)
                     .then((result) => {
                         running.delete(key);
-                        promiseWrapper.resolver(result as ReturnType<T>);
+                        promiseWrapper.resolve(result as ReturnType<T>);
                         resolve(result);
                     })
                     .catch((error) => {
                         running.delete(key);
-                        promiseWrapper.rejecter(error);
+                        promiseWrapper.reject(error);
                         reject(error);
                     });
             }
