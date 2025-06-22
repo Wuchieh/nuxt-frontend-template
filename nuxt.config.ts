@@ -1,10 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+    build: { transpile: ['vuetify'] },
+
     compatibilityDate: '2024-04-03',
-    css: ['~/assets/css/style.scss'],
+
+    css: [
+        'vuetify/styles',
+        '@mdi/font/css/materialdesignicons.css',
+        '~/assets/css/style.scss',
+    ],
 
     devtools: { enabled: true },
+
+    // when enabling ssr option you need to disable inlineStyles and maybe devLogs
+    features: {
+        devLogs: true,
+        inlineStyles: true,
+    },
 
     future: { compatibilityVersion: 4 },
 
@@ -50,6 +63,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        '@nuxt/fonts',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         '@nuxt/image',
@@ -81,7 +95,19 @@ export default defineNuxtConfig({
         },
     },
 
+    // when enabling/disabling ssr option, remember to update ssr option in plugins/0100.vuetify.ts
+    ssr: true,
+
     unocss: { nuxtLayers: true },
 
-    vite: { css: { preprocessorOptions: { scss: { api: 'modern' } } } },
+    vite: {
+        css: { preprocessorOptions: { scss: { api: 'modern' } } },
+        ssr: { noExternal: ['vuetify'] },
+    },
+
+    vuetify: {
+        autoImport: true,
+
+        styles: { configFile: 'assets/settings.scss' },
+    },
 });
