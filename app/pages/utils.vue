@@ -26,6 +26,20 @@
                 </button>
             </div>
         </div>
+        <div>
+            <h3>createObjectURL</h3>
+            <div>
+                <input
+                    type="file"
+                    @change="fileInputChange"
+                >
+                <img
+                    v-if="image"
+                    alt="createObjectURL"
+                    :src="createObjectURL(image)"
+                >
+            </div>
+        </div>
     </div>
 </template>
 
@@ -33,6 +47,15 @@
 const _sleep = debouncePromise(sleep);
 const debounceRefValue = debounceRef('');
 const [num, resetNum] = useResetRef(0);
+const image = ref<File | undefined>(void 0);
+
+function fileInputChange(e: Event) {
+    const el = e.target as HTMLInputElement | null;
+    if (!el) return;
+    if (el.files) {
+        image.value = el.files[0];
+    }
+}
 
 async function onClickDebouncePromise() {
     _sleep(1000).then(() => {

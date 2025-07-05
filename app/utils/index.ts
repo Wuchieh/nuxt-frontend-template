@@ -10,6 +10,10 @@ export interface withResolversPromise<T> {
 
 export const sleep = (ms: number) => new Promise((resolve) => void setTimeout(resolve, ms));
 
+export function createObjectURL(file?: Blob | MediaSource) {
+    return file ? URL.createObjectURL(file) : void 0;
+}
+
 export function useWithResolvers<T>(): withResolversPromise<T> {
     if (Promise.withResolvers) {
         return Promise.withResolvers<T>();
