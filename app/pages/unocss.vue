@@ -4,6 +4,10 @@
         :style="{ background, color: textColor }"
     >
         <div>
+            <h3>custom icon</h3>
+            <div class="color-red i-custom-cat size-40px" />
+        </div>
+        <div>
             <h1 class="m-0">
                 預設顏色
             </h1>

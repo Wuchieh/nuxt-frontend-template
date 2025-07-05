@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",
+    "@iconify/utils": "^2.3.0",
     "@kikiutils/eslint-config": "^1.2.7",
     "@types/lodash-es": "^4.17.12",
     "@unocss/nuxt": "66.3.2",
