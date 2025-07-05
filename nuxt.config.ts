@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        'nitro-cloudflare-dev',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         '@nuxt/image',
@@ -57,6 +58,15 @@ export default defineNuxtConfig({
         '@nuxtjs/google-fonts',
         '@nuxt/eslint',
     ],
+
+    nitro: {
+        cloudflare: {
+            deployConfig: true,
+            nodeCompat: true,
+        },
+
+        preset: 'cloudflare-pages',
+    },
 
     postcss: {
         plugins: {
