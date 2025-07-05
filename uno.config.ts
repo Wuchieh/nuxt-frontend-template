@@ -1,7 +1,10 @@
+import path from 'node:path';
+
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import {
     defineConfig,
     presetIcons,
-    presetUno,
+    presetWind3,
 } from 'unocss';
 import type { PresetMiniTheme } from 'unocss';
 
@@ -31,8 +34,15 @@ export default defineConfig({
         },
     ],
     presets: [
-        presetUno(),
-        presetIcons({ cdn: 'https://esm.sh/' }),
+        presetWind3(),
+        presetIcons({
+            cdn: 'https://esm.sh/',
+            collections: {
+                custom: FileSystemIconLoader(
+                    path.resolve(import.meta.dirname, './app/assets/icon-unocss'),
+                ),
+            },
+        }),
     ],
     rules: [
         [
