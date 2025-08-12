@@ -3,8 +3,9 @@ import path from 'node:path';
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 import {
     defineConfig,
+    presetAttributify,
     presetIcons,
-    presetWind3,
+    presetWind4,
 } from 'unocss';
 import type { PresetMiniTheme } from 'unocss';
 
@@ -34,7 +35,8 @@ export default defineConfig({
         },
     ],
     presets: [
-        presetWind3(),
+        presetWind4(),
+        presetAttributify(),
         presetIcons({
             cdn: 'https://esm.sh/',
             collections: {
