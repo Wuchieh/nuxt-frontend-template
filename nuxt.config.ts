@@ -101,10 +101,7 @@ export default defineNuxtConfig({
 
     unocss: { nuxtLayers: true },
 
-    vite: {
-        css: { preprocessorOptions: { scss: { api: 'modern' } } },
-        ssr: { noExternal: ['vuetify'] },
-    },
+    vite: { ssr: { noExternal: ['vuetify'] } },
 
     vuetify: {
         autoImport: true,

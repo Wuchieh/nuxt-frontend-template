@@ -43,17 +43,13 @@ export default defineNuxtModule<ModuleOptions>({
             viteInlineConfig.css ??= {};
             viteInlineConfig.css.preprocessorOptions ??= {};
             viteInlineConfig.css.preprocessorOptions.sass ??= {};
-            viteInlineConfig.css.preprocessorOptions.sass.api = 'modern-compiler';
-            viteInlineConfig.css.preprocessorOptions.scss ??= {};
-            viteInlineConfig.css.preprocessorOptions.scss.api = 'modern-compiler';
 
             viteInlineConfig.plugins.push({
                 configResolved(config) {
                     if (isObject(options.styles)) {
                         sassVariables = true;
-                        configFile = path.isAbsolute(options.styles.configFile)
-                            ? path.resolve(options.styles.configFile)
-                            : path.resolve(path.join(config.root || process.cwd(), options.styles.configFile));
+                        // eslint-disable-next-line style/max-len
+                        configFile = path.isAbsolute(options.styles.configFile) ? path.resolve(options.styles.configFile) : path.resolve(path.join(config.root || process.cwd(), options.styles.configFile));
                         configFile = pathToFileURL(configFile).href;
                     } else {
                         isNone = options.styles === 'none';
