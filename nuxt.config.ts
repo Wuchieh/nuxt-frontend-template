@@ -93,6 +93,4 @@ export default defineNuxtConfig({
     },
 
     unocss: { nuxtLayers: true },
-
-    vite: { css: { preprocessorOptions: { scss: { api: 'modern' } } } },
 });
