@@ -5,7 +5,7 @@ import {
     defineConfig,
     presetAttributify,
     presetIcons,
-    presetWind4,
+    presetWind3,
 } from 'unocss';
 import type { PresetMiniTheme } from 'unocss';
 
@@ -35,7 +35,7 @@ export default defineConfig({
         },
     ],
     presets: [
-        presetWind4(),
+        presetWind3(),
         presetAttributify(),
         presetIcons({
             cdn: 'https://esm.sh/',
