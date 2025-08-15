@@ -43,5 +43,13 @@
     "sass": "^1.90.0",
     "unocss": "66.3.2",
     "vue-tsc": "3.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
