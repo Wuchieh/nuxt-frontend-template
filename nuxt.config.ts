@@ -28,10 +28,8 @@ export default defineNuxtConfig({
     },
 
     i18n: {
-        bundle: { optimizeTranslationDirective: false },
         defaultLocale: 'zh-TW',
         langDir: 'language/',
-        lazy: true,
         locales: [
             {
                 code: 'zh-TW',

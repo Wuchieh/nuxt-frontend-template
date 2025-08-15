@@ -13,13 +13,12 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.5.2",
+    "@nuxt/eslint": "^1.8.0",
     "@nuxt/image": "^1.11.0",
     "@nuxt/kit": "^3.18.1",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/i18n": "^9.5.6",
+    "@nuxtjs/i18n": "^10.0.5",
     "@pinia/nuxt": "^0.11.2",
-    "@unocss/preset-wind3": "66.3.2",
     "date-fns": "^4.1.0",
     "js-md5": "^0.8.3",
     "lodash-es": "^4.17.21",
@@ -30,14 +29,14 @@
     "vuetify": "^3.9.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.19.0",
-    "@iconify/utils": "^2.3.0",
-    "@kikiutils/eslint-config": "^1.2.7",
+    "@antfu/eslint-config": "^5.2.1",
+    "@iconify/utils": "^3.0.1",
+    "@kikiutils/eslint-config": "^2.0.0",
     "@mdi/font": "^7.4.47",
     "@nuxt/fonts": "^0.11.4",
     "@types/lodash-es": "^4.17.12",
-    "@unocss/nuxt": "66.3.2",
-    "@unocss/postcss": "66.3.2",
+    "@unocss/nuxt": "^66.4.2",
+    "@unocss/postcss": "^66.4.2",
     "@vuetify/loader-shared": "^2.1.1",
     "eslint": "^9.33.0",
     "eslint-plugin-tailwindcss": "^3.18.2",
@@ -48,9 +47,17 @@
     "postcss-pxtorem": "^6.1.0",
     "sass": "^1.90.0",
     "sass-embedded": "^1.90.0",
-    "unocss": "66.3.2",
+    "unocss": "^66.4.2",
     "upath": "^2.0.1",
     "vite-plugin-vuetify": "^2.1.2",
-    "vue-tsc": "3.0.1"
+    "vue-tsc": "^3.0.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
