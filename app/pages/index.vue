@@ -18,6 +18,7 @@ const name = [
     'pinia',
     'post-css',
     'utils',
+    'unocss',
     'vuetify',
 ];
 </script>

@@ -74,6 +74,8 @@ onMounted(() => {
         mainRef.value.style.height = `calc(100vh - ${top}px)`;
     }
 });
+
+definePageMeta({ name: 'unocss' });
 </script>
 
 <style lang="scss" scoped>
