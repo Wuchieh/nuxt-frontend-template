@@ -36,15 +36,9 @@ export default defineNuxtConfig({
     },
 
     image: {
-        presets: {
-            default: {
-                modifiers: {
-                    format: 'webp',
-                    quality: 75, // 設定品質
-                },
-            },
-        },
+        presets: { default: { modifiers: { format: 'webp' } } },
         provider: 'ipx',
+        quality: 75, // 設定品質
     },
 
     modules: [
