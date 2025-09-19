@@ -47,7 +47,7 @@
     "sass": "^1.92.1",
     "unocss": "^66.5.1",
     "vue-tsc": "^3.0.7",
-    "wrangler": "^4.30.0"
+    "wrangler": "^4.38.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
